@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise 4.1</title>
+    <script>
+        
+
+ //Create a function and button which allows a user to enter baggage weight and alerts them if the baggage exceeds the allowance of 15kg
+
+ function f1(){
+    let baggagteWeight=parseFloat(document.getElementById('weightInput'.value));
+
+    if(baggagteWeight>15){
+        alert('Your baggage exceeds the allowance of 15kg');
+    }else{
+        alert('Your baggage is within the allowance')
+    };
+ }
+
+
+ /*
+ 
+ Exercise 2:
+
+Create a page with a button
+
+When the user clicks,
+
+If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23.
+
+Find the sum of all the multiples of 3 or 5 below 1000 and alert the user to the correct answer.
+ 
+ */
+
+
+function f2(a, b, n) {
+    let sum = 0;
+    for (let i = 0; i < n; i++) {
+        if (i % a === 0 || i % b === 0) {
+            sum += i;
+        }
+    }
+    return sum;
+   
+}
+
+function showResult2(){
+let result=f2(3,5,1000);
+alert("The sum of all multiples of 3 or 5 below 1000 is :"+ result);}
+
+
+
+ // Exercise 3,Create a function to return the sum of all the multiples of a or b below n
+
+function f3(a,b,n)
+
+{
+
+let sum=0;
+
+ for (let i=1;i<n;i++)
+
+  if ( i%a==0 || i%b==0)
+{
+    sum +=i;
+}
+    return sum;
+}
+
+// let result=f3(3,5,10);
+// alert(result)
+
+
+
+function handleCalculateF3() {
+            let a = Number(document.getElementById('a_f3').value);
+       
+            let b = Number(document.getElementById('b_f3').value);
+
+            let n = Number(document.getElementById('n_f3').value);
+            
+    
+            let answer = f3(a, b, n);
+            alert(" the sum of all the multiples of a or b :"+ answer);
+        }
+
+
+
+/*
+
+Exercise 4, Arrays: f4 should take 2 integer and 1 array parameters and return an integer.
+
+Create a function f4 to return the sum of all the multiples of a or b in array l
+*/
+
+
+function f4 (a,b,arr){
+
+let sum=0
+
+for (let i=0;i<arr.length;i++)
+    if( arr[i]%a===0 || arr[i]%b===0)
+    {
+        sum +=arr[i];
+    }
+return sum;
+
+} 
+
+// let result1= f4(5,7,[5,6,7,8,9,10]);
+// alert(result1)
+
+function handleCalculateF4() {
+            let a = Number(document.getElementById('a_f4').value);
+            //document: 현재 웹페이지 문서
+            //.getElementById('a'): id가 "a"인 요소(입력창)를 찾음
+            // .value: 그 입력창에 입력된 값을 가져옴
+            // Number(): 가져온 값을 숫자로 변환
+            //결과: 사용자가 a 입력창에 쓴 숫자가 a 변수에 저장됨
+
+            let b = Number(document.getElementById('b_f4').value);
+            
+            let text = document.getElementById('l_f4').value;
+            // let text: text라는 변수 만들기
+                // 사용자가 "5,6,7,8,9,10" 입력
+                // text = "5,6,7,8,9,10" (문자열 그대로)
+
+
+
+            let arr = text.split(',').map(Number);
+            //text.split(','): 문자열을 쉼표(,) 기준으로 자름
+            //예: "5,6,7" → ["5", "6", "7"]
+            //.map(Number): 배열의 각 요소를 복사하면서 Number로 변환
+            // 예: ["5", "6", "7"] → [5, 6, 7]
+
+
+
+            let answer = f4(a, b, arr);
+            alert(" the sum of all the multiples of a or b in array :"+ answer);
+        }
+
+
+/*
+
+Exercise 5, Arrays: f5 should take array parameters and return an integer.
+
+Create a function f5 to return the sum of all the multiples of factors 
+
+in a found in l (a and l should be arrays of integers, a is of length 2)
+
+*/
+
+
+function f5(a,l)
+{
+    let sum=0;
+
+    for(let i=0;i<l.length;i++)
+        if (l[i]%a[0]===0 || l[i]%a[1]===0 )
+        {
+            sum=sum+l[i];
+        }
+
+ return sum;
+}
+
+// let results2=f5([2,3],[1,2,3,4,5,6])
+// alert(results2)
+
+
+
+/*
+(Exercise 5.1) Create a page with a button and two wide input boxes, labelled a and l
+
+Call the function f5 in the function called by onClick, and alert the user to the returned answer when they press the button.
+
+You may find the split function useful for creating arrays from the strings entered: Split
+
+
+*/
+
+
+
+function handleCalculateF5() {
+            let textA = document.getElementById('a_f5').value;
+            let arrA= textA.split(',').map(Number);
+          
+            let textL = document.getElementById('l_f5').value;
+            let arrL= textL.split(',').map(Number);
+        
+
+
+            let answer = f5(arrA,arrL);
+            alert(" the sum of all the multiples of a and l:"+ answer);
+        }
+
+
+
+
+
+
+
+
+/*
+Exercise 6, Arrays: f6 should take array parameters and return an integer.
+
+Create a function f6 to return the sum of all the multiples of factors in a found in in l 
+
+(a and l should be arrays of integers)
+
+*/
+
+
+function f6(a, l) {
+    let sum = 0;
+    
+    for (let i = 0; i < l.length; i++) {
+      
+        for (let j = 0; j < a.length; j++) {
+            if (l[i] % a[j] === 0) {
+                sum += l[i];
+                break; 
+            }
+        }
+    }
+    
+    return sum;
+}
+
+// let result3 = f6([2, 3, 5], [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
+// alert(result3);  // This will alert: 47
+
+
+
+/*
+
+(Exercise 6.1) Create a page with a button and two wide input boxes, labelled a and l
+
+Call the function f6 in the function called by onClick, and alert the user to the returned answer when they press the button.
+
+You may find the split function useful for creating arrays from the strings entered: Split
+
+*/
+
+function handleCalculateF6() {
+            let textA = document.getElementById('a_f6').value;
+            let arrA= textA.split(',').map(Number);
+          
+            let textL = document.getElementById('l_f6').value;
+            let arrL= textL.split(',').map(Number);
+        
+
+
+            let answer = f6(arrA,arrL);
+            alert(" the sum of all the multiples of a and l :"+ answer);
+        }
+
+    </script>
+</head>
+
+
+
+<body>
+
+      <h2>Exercise 1 </h2>
+<p><input type="number" id="weightInput" placeholder="Enter weight in kg"></p>
+<p><input type="button" value="check Baggage" onclick="f1()"></p>
+
+
+    
+ <h2>Exercise 2 </h2>
+
+<button onclick="showResult2()">Find Sum of Multiples</button>
+
+
+
+  <h2>Exercise 3.1</h2>
+   <p>a: <input id="a_f3" placeholder="e.g.,2"></p> 
+   <p>b: <input id="b_f3" placeholder="e.g.,3"></p> 
+   <p>l: <input id="n_f3" placeholder="e.g., 1,2,3,4,5"></p>
+    <button onclick="handleCalculateF3()">Click</button>
+
+  <h2>Exercise 4.1</h2>
+   <p>a: <input id="a_f4" placeholder="e.g.,2"></p> 
+   <p>b: <input id="b_f4" placeholder="e.g.,3"></p> 
+   <p>l: <input id="l_f4" placeholder="e.g., 1,2,3,4,5"></p>
+    <button onclick="handleCalculateF4()">Click</button>
+
+<h2>Exercise 5.1</h2>
+<p>a:<input id="a_f5" placeholder="e.g., 1,2"></p>
+<p>l:<input id="l_f5" placeholder="e.g., 1,2,3,4,5"></p>
+ <button onclick="handleCalculateF5()">Click</button>
+
+<h2>Exercise 6.1</h2>
+    <p>a:<input id="a_f6" placeholder="e.g., 1,2,3,4,5"></p>
+    <p>l:<input id="l_f6" placeholder="e.g., 1,2,3,4,5"></p>
+    <button onclick="handleCalculateF6()">Click</button>
+
+
+
+
+</body>
+
+</html>

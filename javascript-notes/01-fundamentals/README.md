@@ -31,11 +31,12 @@ const name = "Jane";
 
 // ❌ var: 쓰지 말자 (함수 스코프, 호이스팅 문제)
 var old = "don't use";
+```
 
 
 ### 4. function 
 
-
+```javascript
 // 1. 변수/상수에 할당 가능
 const sayHello = function(name) {
     return `Hello, ${name}!`;
@@ -55,8 +56,11 @@ function createCounter() {
     };
 }
 
+```
+
 ### 5. object 
 
+```javascript
 // 리터럴 생성 방식 (가장 흔함)
 const person = {
     name: "Jane",
@@ -70,5 +74,5 @@ const person = {
 console.log(person.name);     // Jane
 console.log(person["age"]);   // 30
 
-
+```
 

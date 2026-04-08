@@ -42,4 +42,53 @@ console.log(result);
 const scores = [85, 92, 78, 90, 88, 76, 95, 89];
 
 const sum=scores.reduce((acc,curr)=>acc+curr,0);
-const
+const avg=sum/scores.length;
+const max=scores.reduce((a,b)=>a>b?a:b)
+
+//If a is greater than b → keep a
+//If b is greater than a → keep b
+
+const min=scores.reduce((a,b)=>a<b?a:b);
+
+console.log(`Average: ${avg}, Max: ${max}, Min: ${min}`);
+
+
+
+// Exercise 4: Method Chaining
+/*
+Process the following tasks in a single chain:
+
+Create an array of numbers from 1 to 20
+Filter numbers greater than 10
+Multiply each remaining number by 3
+Calculate the sum of all numbers
+
+*/
+
+
+const result1=Array.from({length:20},(_,i)=>i+1) // (_,i) :Parameter is NOT needed
+        .filter(n=>n>10)
+        .map(n=>n*3)
+        .reduce((sum,n)=>sum+n,0);
+
+console.log(result1);
+
+
+//Exercise 5: Working with an Array of Objects
+
+//From the users array below, 
+// find all users who are 30 years or older 
+// AND whose name starts with 'Kim' (or any specific letter, e.g., 'K').
+
+
+const users = [
+    { name: 'Kim Chulsoo', age: 25, city: 'Seoul' },
+    { name: 'Lee Younghee', age: 32, city: 'Busan' },
+    { name: 'Kim Minsoo', age: 35, city: 'Incheon' },
+    { name: 'Park Jisung', age: 28, city: 'Seoul' },
+    { name: 'Kim Yoohna', age: 31, city: 'Daejeon' }
+];
+
+
+const result2=users.filter(user=>user.age>=30 && user.name.startsWith('Kim'));
+console.log(result2)

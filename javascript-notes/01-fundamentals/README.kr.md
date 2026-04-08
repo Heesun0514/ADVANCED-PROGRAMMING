@@ -578,7 +578,7 @@ console.log(days);  // ['mon', 'tue', 'wed']
 
 #### 배열 순회
 
-javascript
+```javascript
 let days = ['mon', 'tue', 'wed'];
 days.push('thu');
 days.unshift('sun');
@@ -594,3 +594,4 @@ for (let day of days) {
     console.log(day);
 }
 // sun, mon, tue, wed, thu
+```

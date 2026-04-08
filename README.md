@@ -11,7 +11,7 @@
 | 2 | DOM API | [📘 README](javascript-notes/02-dom-api/README.md) | [🇰🇷 README.kr.md](javascript-notes/02-dom-api/README.kr.md) | ✅ Done |
 | 3 | Arrays | [📘 README](javascript-notes/03-arrays/README.md) | [🇰🇷 README.kr.md](javascript-notes/03-arrays/README.kr.md) | ✅ Done |
 | 4 | Events | [📘 README](javascript-notes/04-events/README.md) | [🇰🇷 README.kr.md](javascript-notes/04-events/README.kr.md) | ✅ Done |
-| 5 |  Asynchronous Programming | [📘 README](javascript-notes/05-asynchronous- programming/README.md) | [🇰🇷 README.kr.md](javascript-notes/05-asynchronous- programming/README.kr.md) | ✅ Done |
+| 5 |  Asynchronous Programming | [📘 README](javascript-notes/05-asynchronous-programming/README.md) | [🇰🇷 README.kr.md](javascript-notes/05-asynchronous-programming/README.kr.md) | ✅ Done |
 | 6 | Network Programming | [📘 README](javascript-notes/06-network-programming/README.md) | [🇰🇷 README.kr.md](javascript-notes/06-network-programming/README.kr.md) | ✅ Done |
 
 

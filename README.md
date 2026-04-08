@@ -7,7 +7,7 @@
 
 | # | Module | Topics | Status |
 |---|--------|--------|--------|
-| 1 | [JavaScript Fundamentals](./01-fundamentals/) | Types, variables, functions, objects, scope | ✅ Done |
+| 1 | [JavaScript Fundamentals](./01-fundamentals//README.md) | Types, variables, functions, objects, scope | ✅ Done |
 | 2 | [DOM API](./02-dom-api/) | Document object, selectors, navigation, manipulation | ✅ Done |
 | 3 | [Arrays](./03-arrays/) | Methods, iteration, map/reduce/filter | ✅ Done |
 | 4 | [Network Programming](./04-network-programming/) | AJAX, fetch(), CORS, same-origin policy | ✅ Done |

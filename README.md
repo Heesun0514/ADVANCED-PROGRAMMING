@@ -7,10 +7,10 @@
 
 | # | Module | English | Korean (Detailed Notes) | Status |
 |---|--------|---------|------------------------|--------|
-| 1 | JavaScript Fundamentals | [📘 README](javascript-notes/01-fundamentals/README.md) | [🇰🇷 README.kr.md](./01-fundamentals/README.kr.md) | ✅ Done |
-| 2 | DOM API | [📘 README](./02-dom-api/README.md) | [🇰🇷 README.kr.md](./02-dom-api/README.kr.md) | ✅ Done |
-| 3 | Arrays | [📘 README](./03-arrays/README.md) | [🇰🇷 README.kr.md](./03-arrays/README.kr.md) | ✅ Done |
-| 4 | Network Programming | [📘 README](./04-network-programming/README.md) | [🇰🇷 README.kr.md](./04-network-programming/README.kr.md) | ✅ Done |
+| 1 | JavaScript Fundamentals | [📘 README](javascript-notes/01-fundamentals/README.md) | [🇰🇷 README.kr.md](javascript-notes/01-fundamentals/README.kr.md) | ✅ Done |
+| 2 | DOM API | [📘 README](javascript-notes/02-dom-api/README.md) | [🇰🇷 README.kr.md](javascript-notes/02-dom-api/README.kr.md) | ✅ Done |
+| 3 | Arrays | [📘 README](javascript-notes/03-arrays/README.md) | [🇰🇷 README.kr.md](javascript-notes/03-arrays/README.kr.md) | ✅ Done |
+| 4 | Network Programming | [📘 README](javascript-notes/04-network-programming/README.md) | [🇰🇷 README.kr.md](javascript-notes/04-network-programming/README.kr.md) | ✅ Done |
 
 ## 📁 Folder Structure
 

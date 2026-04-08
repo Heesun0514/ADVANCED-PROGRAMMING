@@ -32,12 +32,13 @@ const name = "Jane";
 // ❌ var: 쓰지 말자 (함수 스코프, 호이스팅 문제)
 var old = "don't use";
 📝 규칙: 기본은 const, 재할당 필요하면 let, var는 절대 사용 금지!
+```
 
-🔄 타입 변환 (Type Conversion)
+### 4.🔄 타입 변환 (Type Conversion)
 
-명시적 형변환 (Explicit Conversion)
+#### 명시적 형변환 (Explicit Conversion)
 
-javascript
+```javascript
 // String() - 문자열로 변환
 console.log(String(3));        // "3"
 console.log(String(true));     // "true"
@@ -65,7 +66,7 @@ console.log(Boolean("0"));     // true  (문자열 "0")
 console.log(Boolean(" "));     // true  (공백 문자열)
 ⚠️ 주의: prompt 입력 시 주의사항
 
-javascript
+
 // ❌ 문제 상황
 const mathScore = prompt('what is score of math?');  // "70"
 const engScore = prompt('what is score of eng?');    // "80"
@@ -79,20 +80,26 @@ const result = (mathScore + engScore) / 2;           // "7080" / 2 = 3540
 const mathScore2 = Number(prompt('what is score of math?'));
 const engScore2 = Number(prompt('what is score of eng?'));
 const result2 = (mathScore2 + engScore2) / 2;  // 75
-➕ 연산자 (Operators)
 
-증가/감소 연산자
+```
 
-javascript
+### 5.➕ 연산자 (Operators)
+
+#### 증가/감소 연산자
+
+```javascript
+
 let num = 10;
 let result1 = num++;   // 10 (증가시키기 전 값 반환)
 let result2 = ++num;   // 12 (증가시킨 후 값 반환)
 
 console.log(result1);  // 10
 console.log(result2);  // 12
-동등/일치 연산자
+```
 
-javascript
+#### 동등/일치 연산자
+
+```javascript
 const a = 1;
 const b = '1';
 
@@ -101,11 +108,15 @@ console.log(a == b);   // true
 
 // === 일치 연산자 (값과 타입 모두 비교) - ✅ 추천
 console.log(a === b);  // false
-🔀 조건문 (Conditional Statements)
+```
 
-if, else if, else
 
-javascript
+
+### 6.🔀 조건문 (Conditional Statements)
+
+#### if, else if, else
+
+```javascript
 const age = 19;
 
 if (age > 19) {
@@ -116,22 +127,31 @@ if (age > 19) {
     console.log('안녕히 가세요');
 }
 // 출력: 수능 잘 치세요
-논리 연산자 (Logical Operators)
 
-연산자	의미	특징
-||	OR	첫 번째 true를 발견하면 즉시 평가 멈춤
-&&	AND	첫 번째 false를 발견하면 즉시 평가 멈춤
-!	NOT	값을 반전 (true → false, false → true)
-javascript
+```
+
+
+#### 논리 연산자 (Logical Operators)
+
+|연산자	|의미	|특징
+|------|------|------|
+| ||	|OR	|첫 번째 true를 발견하면 즉시 평가 멈춤 |
+|&&	|AND	|첫 번째 false를 발견하면 즉시 평가 멈춤 |
+|!	| NOT	| 값을 반전 (true → false, false → true) |
+
+```javascript
 // NOT 연산자 활용
 // const age1 = prompt('나이를 입력하세요');
 // const isAdult = age1 > 19;
 // if (!isAdult) {
 //     console.log('go back');
 // }
-⚠️ 연산자 우선순위 주의
+```
 
-javascript
+
+#### ⚠️ 연산자 우선순위 주의
+
+```javascript
 const gender = 'F';
 const name = 'Jane';
 const isAdult1 = 'true';
@@ -152,32 +172,42 @@ if (gender === 'M' && (name === 'Mike' || isAdult1)) {
 } else {
     console.log('denied');  // 실행됨
 }
-🔁 반복문 (Loops)
 
-for 반복문
+```
 
-javascript
+### 7. 🔁 반복문 (Loops)
+
+#### for 반복문
+
+```javascript
 for (let i = 0; i < 10; i++) {
     console.log(i + 1);
 }
-while 반복문
+```
 
-javascript
+#### while 반복문
+
+```javascript
 let e = 0;
 while (e < 10) {
     console.log(e);
     e++;
 }
-do...while 반복문
+```
 
-javascript
+#### do...while 반복문
+
+```javascript
 let f = 0;
 do {
     f++;
 } while (f < 10);
-break와 continue
+```
 
-javascript
+#### break와 continue
+
+```javascript
+let f = 0;
 // break: 반복문 종료
 while (true) {
     let answer = confirm('continue?');
@@ -193,16 +223,22 @@ for (let g = 0; g < 10; g++) {
     }
     console.log(g);  // 0, 2, 4, 6, 8
 }
-for...of 반복문 (배열 전용 - 인덱스 없음)
 
-javascript
+```
+
+
+#### for...of 반복문 (배열 전용 - 인덱스 없음)
+
+```javascript
 let days = ['mon', 'tue', 'wed'];
 for (let day of days) {
     console.log(day);  // mon, tue, wed
 }
-🔀 switch 문
+```
 
-javascript
+### 8. 🔀 switch 문
+
+```javascript
 let fruit = prompt('무슨 과일을 사고 싶나요?');
 
 switch (fruit) {
@@ -219,15 +255,22 @@ switch (fruit) {
     default:
         console.log('그런 과일은 없습니다');
 }
-📦 함수 (Function)
+
+```
+
+
+
+### 9. 📦 함수 (Function)
 
 함수 선언 vs 함수 표현식
 
-구분	함수 선언문	함수 표현식
-호이스팅	✅ 가능 (어디서든 호출 가능)	❌ 불가능 (선언 후에만 호출 가능)
-문법	function name() {}	const name = function() {}
-사용 시점	선언 전에도 호출 가능	선언 후에만 호출 가능
-javascript
+|구분	|함수 선언문	|함수 표현식
+|------|------|------|
+|호이스팅|	✅ 가능 (어디서든 호출 가능) |	❌ 불가능 (선언 후에만 호출 가능)|
+|문법|	function name() {}	| const name = function() {}|
+|사용 시점|	선언 전에도 호출 가능|	선언 후에만 호출 가능|
+
+```javascript
 // 함수 선언문 - 호이스팅 O
 sayHello();  // 호출 가능!
 
@@ -240,9 +283,12 @@ function sayHello() {
 let showError = function() {
     console.log('error');
 };
-함수 기본 문법
 
-javascript
+```
+
+#### 함수 기본 문법
+
+```javascript
 // 기본 함수
 function showError() {
     alert('에러가 발생했습니다');
@@ -267,9 +313,13 @@ function sayHello(name = 'friend') {
 }
 sayHello();        // Hello, friend
 sayHello('Jane');  // Hello, Jane
-return 문
+```
 
-javascript
+#### return 문
+
+
+
+```javascript
 // 값 반환
 function add(num1, num2) {
     return num1 + num2;
@@ -291,19 +341,23 @@ function showError() {
     return;  // 여기서 함수 종료
     alert('이 코드는 절대 실행되지 않습니다');
 }
-함수 네이밍 컨벤션
+```
 
-함수명	의미
-showError	에러를 보여줌
-getName	이름을 얻어옴
-createUserData	유저데이터 생성
-checkLogin	로그인 여부 체크
+#### 함수 네이밍 컨벤션
+
+|함수명	|의미|
+|------|------|
+|showError	|에러를 보여줌
+getName	|이름을 얻어옴
+|createUserData	|유저데이터 생성
+|checkLogin	|로그인 여부 체크
 💡 Tip: 함수는 한 번에 한 작업에 집중하고, 읽기 쉽고 어떤 동작인지 알 수 있게 네이밍하기
-🎯 객체 (Object)
 
-객체 생성 및 접근
+### 10.🎯 객체 (Object)
 
-javascript
+#### 객체 생성 및 접근
+
+```javascript
 // 리터럴 생성 방식
 const superman = {
     name: 'clark',
@@ -314,9 +368,11 @@ const superman = {
 console.log(superman.name);     // clark
 console.log(superman['age']);   // 30
 console.log(superman);          // {name: 'clark', age: 30}
-프로퍼티 추가, 수정, 삭제
+```
 
-javascript
+#### 프로퍼티 추가, 수정, 삭제
+
+```javascript
 const superman = { name: 'clark', age: 30 };
 
 // 추가
@@ -329,9 +385,11 @@ superman.age = 33;
 // 삭제
 delete superman.hairColor;
 console.log(superman);  // {name: 'clark', age: 33, gender: 'male'}
-단축 프로퍼티 (Shorthand Property)
+```
 
-javascript
+#### 단축 프로퍼티 (Shorthand Property)
+
+```javascript
 const name = 'clark';
 const age = 33;
 
@@ -351,9 +409,11 @@ function makeObject(name, age) {
 }
 const mike = makeObject('Mike', 30);
 console.log(mike);  // {name: 'Mike', age: 30, hobby: 'football'}
-프로퍼티 존재 여부 확인 (in 연산자)
+```
 
-javascript
+#### 프로퍼티 존재 여부 확인 (in 연산자)
+
+```javascript
 const superman = { name: 'clark', age: 33 };
 
 console.log(superman.birthDay);     // undefined
@@ -373,20 +433,24 @@ const jane = { name: 'Jane' };
 
 console.log(isAdult(mike));  // true
 console.log(isAdult(jane));  // false (age 속성 없음)
-for...in 반복문 (객체 순회)
+```
 
-javascript
+#### for...in 반복문 (객체 순회)
+
+```javascript
 const superman = { name: 'clark', age: 33 };
 
 for (let key in superman) {
     console.log(key);              // name, age
     console.log(superman[key]);   // clark, 33
 }
-🎯 객체 - 메서드와 this
+```
 
-메서드 정의
+### 11.🎯 객체 - 메서드와 this
 
-javascript
+#### 메서드 정의
+
+```javascript
 const superman = {
     name: 'clark',
     age: 33,
@@ -397,9 +461,11 @@ const superman = {
 };
 
 superman.sayHello();  // Hello, I'm clark
-this의 중요성
+```
 
-javascript
+#### this의 중요성
+
+```javascript
 // ❌ 잘못된 예: 객체명을 직접 사용
 let boy = {
     name: "Mike",
@@ -423,9 +489,11 @@ let boy2 = {
 let man2 = boy2;
 boy2 = null;
 man2.showName();  // Mike (정상 동작)
-화살표 함수와 this 주의사항
+```
 
-javascript
+#### 화살표 함수와 this 주의사항
+
+``` javascript
 // ⚠️ 화살표 함수는 자신만의 this를 가지지 않음
 // 외부 스코프의 this를 가져옴
 
@@ -444,11 +512,13 @@ let boy = {
 boy.sayHello();  // Mike
 boy.sayHi();     // window (전역 객체)
 💡 Tip: 객체의 메서드에서는 일반 함수를 사용하고, 화살표 함수는 this 바인딩이 필요 없는 곳에서 사용하세요.
-📚 배열 (Array)
+```
 
-배열 생성 및 접근
+### 12.📚 배열 (Array)
 
-javascript
+#### 배열 생성 및 접근
+
+```javascript
 // 배열 생성
 let students = ['철수', '영희', '영수'];
 let days = ['mon', 'tue', 'wed'];
@@ -463,9 +533,11 @@ console.log(students);  // ['민정', '영희', '영수']
 
 // 배열 길이
 console.log(days.length);  // 3
-다양한 타입을 담는 배열
+```
 
-javascript
+#### 다양한 타입을 담는 배열
+
+``` javascript
 let arr = [
     '민수',           // 문자열
     3,               // 숫자
@@ -473,14 +545,18 @@ let arr = [
     { name: 'Mike', age: 30 },  // 객체
     function() { console.log('TEST'); }  // 함수
 ];
-배열 조작 메서드
+```
 
-메서드	설명	원본 변경
-push()	배열 끝에 추가	✅
-pop()	배열 끝 요소 제거	✅
-unshift()	배열 앞에 추가	✅
-shift()	배열 앞 요소 제거	✅
-javascript
+#### 배열 조작 메서드
+
+|메서드	|설명	|원본 변경
+|------|------|------|
+|push()	|배열 끝에 추가	|✅
+|pop()	|배열 끝 요소 제거	|✅
+|unshift()	|배열 앞에 추가|	✅
+|shift()	|배열 앞 요소 제거|	✅
+
+```javascript
 let days = ['mon', 'tue', 'wed'];
 
 // push: 끝에 추가
@@ -498,7 +574,9 @@ console.log(days);  // ['sun', 'mon', 'tue', 'wed']
 // shift: 앞에 제거
 days.shift();
 console.log(days);  // ['mon', 'tue', 'wed']
-배열 순회
+```
+
+#### 배열 순회
 
 javascript
 let days = ['mon', 'tue', 'wed'];

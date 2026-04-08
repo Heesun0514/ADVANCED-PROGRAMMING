@@ -46,10 +46,10 @@ const firstParagraph = document.querySelector('p');
 
 JavaScript로 다음 요소들을 찾아보세요:
 
-1.id가 "app"인 div
-2.class가 "list"인 ul
-3.class가 "special"인 li
-4.모든 li 요소들
+- 1.id가 "app"인 div
+- 2.class가 "list"인 ul
+- 3.class가 "special"인 li
+- 4.모든 li 요소들
 
 ```javascript
 
@@ -216,4 +216,17 @@ element.parentNode.removeChild(element);
 
 // 방법 2: 최신 방식 (더 직관적)
 element.remove();  // 자신을 바로 제거
+```
+
+
+## exercise 
+class가 "special"인 li 요소를 삭제하세요.
+
+```javascript
+const speical=document.querySelector('.special');
+speical.remove();
+
+// or 
+
+speical.parentNode.removeChild(speical);
 ```

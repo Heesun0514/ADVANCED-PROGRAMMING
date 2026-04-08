@@ -95,12 +95,25 @@ const big = numbers.filter(n => n > 3);           // [4,5,6]
 
 #### reduce() - 누적
 
+##### The Parameters
+
+
+
 ```javascript
 const numbers = [1, 2, 3, 4, 5];
 
 // 합계
 const sum = numbers.reduce((acc, curr) => acc + curr, 0);  // 15
+```
+|parameter	|Name	|Meaning
+|------------|-----|--------|
+|acc	|Accumulator	|The running total (carries over each step)
+|curr	|Current	|The current element being processed
+|0	|Initial Value	|Starting value for acc before the first loop
 
+
+
+```javascript
 // 최댓값
 const max = numbers.reduce((acc, curr) => acc > curr ? acc : curr);  // 5
 

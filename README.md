@@ -14,6 +14,33 @@
 
 ## 📁 Folder Structure
 
+
+```text
+javascript-notes/
+├── README.md              (this file - English overview)
+├── 01-fundamentals/
+│   ├── README.md          (English)
+│   ├── README.kr.md       (Korean - detailed notes)
+│   ├── examples.js
+│   └── exercises.js
+├── 02-dom-api/
+│   ├── README.md          (English)
+│   ├── README.kr.md       (Korean - detailed notes)
+│   ├── examples.js
+│   └── exercises.js
+├── 03-arrays/
+│   ├── README.md          (English)
+│   ├── README.kr.md       (Korean - detailed notes)
+│   ├── examples.js
+│   └── exercises.js
+└── 04-network-programming/
+    ├── README.md          (English)
+    ├── README.kr.md       (Korean - detailed notes)
+    ├── examples.js
+    └── exercises.js
+```
+
+
 ## 📝 Each Module Contains
 
 | File | Language | Purpose |

@@ -351,6 +351,7 @@ function showError() {
 getName	|이름을 얻어옴
 |createUserData	|유저데이터 생성
 |checkLogin	|로그인 여부 체크
+
 💡 Tip: 함수는 한 번에 한 작업에 집중하고, 읽기 쉽고 어떤 동작인지 알 수 있게 네이밍하기
 
 ### 10.🎯 객체 (Object)

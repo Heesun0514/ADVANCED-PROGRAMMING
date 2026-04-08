@@ -42,6 +42,52 @@ const firstParagraph = document.querySelector('p');
 ```
 
 
+## exercise 1
+
+```javascript
+
+<div id="app">
+    <ul class="list">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li class="special">Item 3</li>
+    </ul>
+</div>
+
+```
+
+1.The div with the ID "app".
+
+```javascript
+
+const app=document.getElementByid('app')
+// or 
+const app2 = document.querySelector('#app');
+```
+
+2.The ul with the class "list".
+
+```javascript
+const list=document.getElementbyClassName('list')[0];
+// or 
+const list2 = document.querySelector('.list');
+```
+
+3.The li with the class "special".
+
+```javascript
+const speical =document.quesrySelector('.speical');
+```
+
+
+4.All li elements.
+
+```javascript
+const allLis=document.querySelectorAll('li');
+console.log(allLis.length); //3
+```
+
+
 ### 4. 상대적 접근 (Navigation)
 
 

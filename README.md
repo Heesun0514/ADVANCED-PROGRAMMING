@@ -12,11 +12,17 @@
 | 3 | [Arrays](./03-arrays/) | Methods, iteration, map/reduce/filter | ✅ Done |
 | 4 | [Network Programming](./04-network-programming/) | AJAX, fetch(), CORS, same-origin policy | ✅ Done |
 
+## 📁 Folder Structure
+
+
 ## 📝 Each Module Contains
 
-- `README.md` - Detailed notes in Korean (for personal study)
-- `examples.js` - Code from lecture
-- `exercises.js` - Practice problems with solutions
+| File | Language | Purpose |
+|------|----------|---------|
+| `README.md` | English | Quick overview for portfolio viewers |
+| `README.kr.md` | Korean | Detailed personal study notes |
+| `examples.js` | English/Code | Lecture code examples |
+| `exercises.js` | English/Code | Practice problems with solutions |
 
 ## 🔗 Connection to Advanced Programming Exam
 
@@ -25,3 +31,11 @@
 | Callback functions | Network socket handling |
 | Async/Await | Understanding asynchronous patterns |
 | JSON parsing | API response processing |
+
+## 🌐 Language Policy
+
+- **Public-facing documents** (this file, module README.md): English
+- **Personal study notes** (README.kr.md): Korean (for faster learning)
+- **Code**: English (variables, functions, comments optional)
+
+---

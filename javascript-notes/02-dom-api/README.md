@@ -42,7 +42,14 @@ const firstParagraph = document.querySelector('p');
 ```
 
 
-## exercise 1
+## exercise 
+
+JavaScript로 다음 요소들을 찾아보세요:
+
+1.id가 "app"인 div
+2.class가 "list"인 ul
+3.class가 "special"인 li
+4.모든 li 요소들
 
 ```javascript
 
@@ -186,6 +193,18 @@ for(let i = 0; i < 100; i++) {
 }
 document.querySelector('ul').appendChild(fragment);
 ```
+
+## exercise 
+"새로운 아이템"이라는 텍스트를 가진 li 요소를 ul의 끝에 추가하세요.
+
+```javascript
+const ul=document.querySelector('.list');
+const newLi=document.createElement('li');
+newLi.textContent='newItem';
+ul.appendChild(newLi);
+```
+
+
 
 ### 9. 요소 제거
 

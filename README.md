@@ -5,15 +5,14 @@
 
 ## 📚 Course Modules
 
-| # | Module | Topics | Status |
-|---|--------|--------|--------|
-| 1 | [JavaScript Fundamentals](./01-fundamentals//README.md) | Types, variables, functions, objects, scope | ✅ Done |
-| 2 | [DOM API](./02-dom-api/) | Document object, selectors, navigation, manipulation | ✅ Done |
-| 3 | [Arrays](./03-arrays/) | Methods, iteration, map/reduce/filter | ✅ Done |
-| 4 | [Network Programming](./04-network-programming/) | AJAX, fetch(), CORS, same-origin policy | ✅ Done |
+| # | Module | English | Korean (Detailed Notes) | Status |
+|---|--------|---------|------------------------|--------|
+| 1 | JavaScript Fundamentals | [📘 README](./01-fundamentals/README.md) | [🇰🇷 README.kr.md](./01-fundamentals/README.kr.md) | ✅ Done |
+| 2 | DOM API | [📘 README](./02-dom-api/README.md) | [🇰🇷 README.kr.md](./02-dom-api/README.kr.md) | ✅ Done |
+| 3 | Arrays | [📘 README](./03-arrays/README.md) | [🇰🇷 README.kr.md](./03-arrays/README.kr.md) | ✅ Done |
+| 4 | Network Programming | [📘 README](./04-network-programming/README.md) | [🇰🇷 README.kr.md](./04-network-programming/README.kr.md) | ✅ Done |
 
 ## 📁 Folder Structure
-
 
 ## 📝 Each Module Contains
 

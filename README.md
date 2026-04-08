@@ -10,35 +10,9 @@
 | 1 | JavaScript Fundamentals | [📘 README](javascript-notes/01-fundamentals/README.md) | [🇰🇷 README.kr.md](javascript-notes/01-fundamentals/README.kr.md) | ✅ Done |
 | 2 | DOM API | [📘 README](javascript-notes/02-dom-api/README.md) | [🇰🇷 README.kr.md](javascript-notes/02-dom-api/README.kr.md) | ✅ Done |
 | 3 | Arrays | [📘 README](javascript-notes/03-arrays/README.md) | [🇰🇷 README.kr.md](javascript-notes/03-arrays/README.kr.md) | ✅ Done |
-| 4 | Network Programming | [📘 README](javascript-notes/04-network-programming/README.md) | [🇰🇷 README.kr.md](javascript-notes/04-network-programming/README.kr.md) | ✅ Done |
+| 4 | Events | [📘 README](javascript-notes/04-events/README.md) | [🇰🇷 README.kr.md](javascript-notes/04-events/README.kr.md) | ✅ Done |
+| 6 | Network Programming | [📘 README](javascript-notes/06-network-programming/README.md) | [🇰🇷 README.kr.md](javascript-notes/06-network-programming/README.kr.md) | ✅ Done |
 
-## 📁 Folder Structure
-
-
-```text
-javascript-notes/
-├── README.md              (this file - English overview)
-├── 01-fundamentals/
-│   ├── README.md          (English)
-│   ├── README.kr.md       (Korean - detailed notes)
-│   ├── examples.js
-│   └── exercises.js
-├── 02-dom-api/
-│   ├── README.md          (English)
-│   ├── README.kr.md       (Korean - detailed notes)
-│   ├── examples.js
-│   └── exercises.js
-├── 03-arrays/
-│   ├── README.md          (English)
-│   ├── README.kr.md       (Korean - detailed notes)
-│   ├── examples.js
-│   └── exercises.js
-└── 04-network-programming/
-    ├── README.md          (English)
-    ├── README.kr.md       (Korean - detailed notes)
-    ├── examples.js
-    └── exercises.js
-```
 
 
 ## 📝 Each Module Contains

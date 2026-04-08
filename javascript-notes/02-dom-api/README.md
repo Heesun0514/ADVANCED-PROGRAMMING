@@ -133,6 +133,32 @@ div.innerText = 'Hello World!';
 
 ```
 
+
+
+## exercise 
+버튼을 클릭하면 h1 제목이 "Welcome!"로 바뀌도록 코드를 작성하세요.
+
+```javascript
+
+//html
+// <h1 id="title"> Hello</h1>
+// <button id='changeBtb>click</button>
+
+const title=document.querySelector('#title');
+const button=document.querySelector('#changeBtn');
+
+button.addEventListener('click',function){
+    title.textContent='Welcome!'
+    // or title.innerText=''Welcome!'
+
+};
+
+
+```
+
+
+
+
 ### 6. 요소 속성 다루기
 
 ```javascript

@@ -170,6 +170,22 @@ const styles = getComputedStyle(element);
 console.log(styles.color);
 ```
 
+
+
+## exercise 
+class가 "list"인 ul의 배경색을 lightblue로 변경하세요.
+
+```javascript
+
+const list=document.querySelector('.list')
+list.style.backgroundColor='Lightblue';
+
+
+```
+
+
+
+
 ### 8. 요소 생성 및 추가
 
 ```javascript

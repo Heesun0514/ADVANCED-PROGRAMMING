@@ -7,72 +7,148 @@
 - HTML 요소들의 계층적 관계를 나타냄
 - Javascript로 DOM을 읽고/쓰고/수정할 수 있음
 
-### 2. Primitive Types (원시 타입)
+### 2. document 객체
 
-| 타입 | 설명 | 예시 |
-|------|------|------|
-| Boolean | true/false | `let isDone = true;` |
-| Null | 의도적으로 비어있음 | `let value = null;` |
-| Undefined | 선언만 하고 할당 안 함 | `let x; // undefined` |
-| String | 문자열 | `let name = "Jane";` |
-| Number | 숫자 (내부적으로는 float) | `let age = 30;` |
-| Symbol | 고유한 값 (ES6) | `const sym = Symbol('id');` |
+- DOM 접근의 최상위 진입점
+- 전역 객체(global)로 어디서든 사용 가능
 
-### 3. 변수 선언 (let vs const vs var)
 
 ```javascript
-// ✅ let: 재할당이 필요한 경우 (블록 스코프)
-let count = 0;
-count = 1;  // OK
 
-// ✅ const: 기본값! 재할당 필요 없을 때
-const name = "Jane";
-// name = "John";  // ❌ TypeError
+console.log(document);  // 전체 DOM 출력
+console.log(document.title);  // 페이지 제목
 
-// ❌ var: 쓰지 말자 (함수 스코프, 호이스팅 문제)
-var old = "don't use";
+```
+
+### 3. DOM 접근자 (Accessors)
+
+| 메서드                          | 설명           | 반환값          |
+|-------------------------------|---------------|-----------------
+| getElementById(id)            | ID로 요소 찾기   | 단일 요소        |
+| getElementsByClassName(class) | 클래스명으로 찾기  | HTMLCollection |
+| getElementsByTagName(tag)     | 태그명으로 찾기    | HTMLCollection|
+| querySelector(selector)       | CSS 선택자로 찾기  | 첫 번째 요소     |
+| querySelectorAll(selector)    |CSS 선택자로 찾기   | NodeList      |
+
+
+
+
+```javascript
+
+// CSS 선택자 방식 (가장 많이 씀!)
+const header = document.querySelector('#main-header');
+const allButtons = document.querySelectorAll('.btn');
+const firstParagraph = document.querySelector('p');
 ```
 
 
-### 4. function 
+### 4. 상대적 접근 (Navigation)
+
+
+| 메서드                         | 설명           
+|------------------------------|--------------------------
+| parentNode                   | 부모 요소  
+| childNodes                   | 모든 자식 노드 (텍스트 노드 포함)
+| children                     |자식 요소들 (HTML 요소만)
+| firstChild / lastChild       | 첫/마지막 자식
+| nextSibling / previousSibling|다음/이전 형제   
+| nextElementSibling / previousElementSibling|다음/이전 요소 형제   
+
 
 ```javascript
-// 1. 변수/상수에 할당 가능
-const sayHello = function(name) {
-    return `Hello, ${name}!`;
-};
 
-// 2. 함수의 인자로 전달 가능
-[1, 2, 3].forEach(function(n) {
-    console.log(n);
-});
+const current = document.querySelector('#current');
+const parent = current.parentNode;
+const nextSibling = current.nextElementSibling;
+const children = current.children;
 
-// 3. 함수의 반환값으로 사용 가능 (클로저)
-function createCounter() {
-    let count = 0;
-    return function() {
-        count++;
-        return count;
-    };
+```
+
+### 5.텍스트 노드 다루기
+
+```javascript
+
+// innerHTML: HTML 태그까지 포함
+const div = document.querySelector('#myDiv');
+div.innerHTML = '<strong>Hello</strong> World!';
+
+// textContent: 순수 텍스트만
+div.textContent = 'Hello World!';
+
+// innerText: 스타일이 적용된 실제 보이는 텍스트
+div.innerText = 'Hello World!';
+
+```
+
+### 6. 요소 속성 다루기
+
+```javascript
+
+// 속성 읽기
+const src = imgElement.getAttribute('src');
+
+// 속성 설정
+imgElement.setAttribute('src', 'new-image.jpg');
+
+// 속성 직접 접근 (일반 속성)
+imgElement.src = 'new-image.jpg';
+inputElement.value = 'new value';
+```
+
+### 7. 스타일링
+
+```javascript
+// 방법 1: style 속성 직접 수정
+element.style.color = 'red';
+element.style.backgroundColor = 'blue';
+element.style.fontSize = '20px';
+
+// 방법 2: setAttribute로 class 변경
+element.setAttribute('class', 'highlight');
+
+// 방법 3: classList 사용 (추천!)
+element.classList.add('active');
+element.classList.remove('hidden');
+element.classList.toggle('visible');
+element.classList.contains('selected'); // true/false
+
+// 현재 스타일 조회 (계산된 스타일)
+const styles = getComputedStyle(element);
+console.log(styles.color);
+```
+
+### 8. 요소 생성 및 추가
+
+```javascript
+
+// 1단계: 요소 생성
+const newDiv = document.createElement('div');
+newDiv.textContent = '새로운 내용';
+newDiv.classList.add('box');
+
+// 2단계: DOM에 추가
+document.body.appendChild(newDiv);  // 끝에 추가
+document.body.prepend(newDiv);      // 앞에 추가
+parentElement.insertBefore(newDiv, referenceElement);  // 특정 위치 앞에
+
+// 여러 개 추가 (성능 좋음)
+const fragment = document.createDocumentFragment();
+for(let i = 0; i < 100; i++) {
+    const li = document.createElement('li');
+    li.textContent = `Item ${i}`;
+    fragment.appendChild(li);
 }
-
+document.querySelector('ul').appendChild(fragment);
 ```
 
-### 5. object 
+### 9. 요소 제거
 
 ```javascript
-// 리터럴 생성 방식 (가장 흔함)
-const person = {
-    name: "Jane",
-    age: 30,
-    greet: function() {
-        return `Hi, I'm ${this.name}`;
-    }
-};
 
-// 접근 방법
-console.log(person.name);     // Jane
-console.log(person["age"]);   // 30
+// 방법 1: 부모에서 자식 제거
+const element = document.querySelector('#toRemove');
+element.parentNode.removeChild(element);
 
+// 방법 2: 최신 방식 (더 직관적)
+element.remove();  // 자신을 바로 제거
 ```
-

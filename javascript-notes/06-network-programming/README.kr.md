@@ -107,9 +107,9 @@ fetchData();
 #### 서버 응답 헤더 예시
 
 // 서버 응답 헤더 예시
-Access-Control-Allow-Origin: https://myapp.com
-Access-Control-Allow-Methods: GET, POST, PUT
-Access-Control-Allow-Headers: Content-Type
+- Access-Control-Allow-Origin: https://myapp.com
+- Access-Control-Allow-Methods: GET, POST, PUT
+- Access-Control-Allow-Headers: Content-Type
 
 
-# ✅ Tip: 현업에서는 fetch() + async/await 조합을 가장 많이 사용합니다. CORS 에러는 프론트엔드 개발 시 자주 마주치는 문제이므로 반드시 이해해야 한다
+### ✅ Tip: 현업에서는 fetch() + async/await 조합을 가장 많이 사용합니다. CORS 에러는 프론트엔드 개발 시 자주 마주치는 문제이므로 반드시 이해해야 한다

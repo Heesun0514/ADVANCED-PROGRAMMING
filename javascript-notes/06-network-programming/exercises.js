@@ -23,19 +23,19 @@ fetch('https://jsonplaceholder.typicode.com/posts/1') // GET 요청.fetch는 기
     // post는 파싱된 실제 데이터 객체(제목, 내용, ID 등을 포함)입니다
     // console.log(post.title)은 그중에서 title 속성(게시물 제목)만 콘솔에 출력합니다
 
-    .then(error=>console.error(error));
+    .then(error=>console.error(error)); // 실패
 
 
 
 
 
 
-문제 2: fetch POST 요청
+// Exercise 2: fetch POST 요청
 
-새로운 게시글을 생성하는 POST 요청을 작성하세요.
+// 새로운 게시글을 생성하는 POST 요청을 작성하세요.
 
-<details> <summary>💡 정답 보기</summary>
-javascript
+
+
 const newPost = {
     title: 'My Post',
     body: 'Content here',
@@ -44,20 +44,28 @@ const newPost = {
 
 fetch('https://jsonplaceholder.typicode.com/posts', {
     method: 'POST',
-    headers: {
-        'Content-Type': 'application/json',
+    headers: { //요청의 헤더(부가 정보)를 설정하는 객체를 엽니다.
+        'Content-Type': 'application/json', //서버에 보내는 데이터의 형식이 JSON임을 알려줍니다.
     },
     body: JSON.stringify(newPost)
+    // 실제로 서버로 전송할 데이터 본문(body)
+    //newPost 객체를 JSON.stringify()로 JSON 문자열로 변환합니다.
+    //(객체 자체는 HTTP로 보낼 수 없고, 문자열만 보낼 수 있기 때문입니다.)
 })
-.then(response => response.json())
-.then(data => console.log('Created:', data));
-</details>
-문제 3: async/await 변환
+.then(response => response.json()) //fetch()는 Promise를 반환합니다.
+.then(data => console.log('Created:', data));//앞 단계에서 파싱된 실제 데이터(서버가 생성해준 게시글 객체, 보통 id 포함)를 data로 받고 출력
 
-위 문제 1을 async/await 방식으로 변환하세요.
 
-<details> <summary>💡 정답 보기</summary>
-javascript
+
+
+
+
+
+// Exercise 2:  3: async/await 변환
+
+// 위 문제 2을 async/await 방식으로 변환하세요.
+
+
 async function getFirstPost() {
     try {
         const response = await fetch('https://jsonplaceholder.typicode.com/posts/1');
@@ -69,4 +77,3 @@ async function getFirstPost() {
 }
 
 getFirstPost();
-</details>

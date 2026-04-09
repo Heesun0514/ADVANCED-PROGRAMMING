@@ -106,7 +106,7 @@ fetchData();
 
 #### 서버 응답 헤더 예시
 
-// 서버 응답 헤더 예시
+
 - Access-Control-Allow-Origin: https://myapp.com
 - Access-Control-Allow-Methods: GET, POST, PUT
 - Access-Control-Allow-Headers: Content-Type

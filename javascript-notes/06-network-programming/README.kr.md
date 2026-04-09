@@ -70,7 +70,41 @@ fetch('https://api.example.com/users', {
 .then(data => console.log(data));
 ```
 
+#### 
 
+- fetch는 기본적으로 HTTP *GET* 요청
+- 완전히 자유롭게 이름을 바꿀 수 있습니다
+
+```javascript
+// ✅ 변수명을 완전히 다르게 지어도 OK
+fetch('https://jsonplaceholder.typicode.com/posts/1')
+    .then(x => x.json())
+    .then(y => console.log(y.title))
+
+// ✅ 한국어도 가능 (하지만 권장하지 않음)
+fetch('https://jsonplaceholder.typicode.com/posts/1')
+    .then(응답 => 응답.json())
+    .then(데이터 => console.log(데이터.title))
+
+// ✅ 의미 있는 이름으로 짓는 게 좋음
+fetch('https://jsonplaceholder.typicode.com/posts/1')
+    .then(res => res.json())      // res = response
+    .then(post => console.log(post.title))  // post = 게시글
+```
+
+> 중요한 점:
+
+- 첫 번째 then: 파라미터는 Response 객체를 받음 → 보통 response, res, r 등으로 이름 지음
+- 두 번째 then: 파싱된 실제 데이터(JSON 객체)를 받음 → 보통 data, post, user, result 등 의미 있는 이름으로 지음
+
+- 관례적으로 많이 쓰는 이름:
+
+``` javascript
+.then(res => res.json())     // response 줄임말
+.then(data => ...)           // 일반적인 데이터
+.then(post => ...)           // 게시글일 때
+.then(user => ...)           // 사용자 정보일 때
+```
 
 ### 🧵 5. async/await 방식 (더 간결)
 

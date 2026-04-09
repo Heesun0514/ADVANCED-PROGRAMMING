@@ -8,7 +8,8 @@
 // JSONPlaceholder API에서 게시글을 가져와서 첫 번째 게시글의 제목을 출력하세요.
 
 
-fetch('https://jsonplaceholder.typicode.com/posts/1') 
+fetch('https://jsonplaceholder.typicode.com/posts/1') // GET 요청.fetch는 기본적으로 HTTP GET 요청을 합니다
+
     // fetch 
         // request HTTP 
         // 이 함수는 Promise를 반환합니다
@@ -17,10 +18,12 @@ fetch('https://jsonplaceholder.typicode.com/posts/1')
     // response는 서버에서 받은 HTTP 응답 객체입니다
     // response.json()은 응답 본문을 JSON 형식으로 파싱하는 메서드이며, 이것도 Promise를 반환합니다
 
- .then(post=>console.log(post.title))   
+ .then(article=>console.log(article.title))   
     // 두 번째 .then()은 JSON 파싱이 완료된 후 실행됩니다
     // post는 파싱된 실제 데이터 객체(제목, 내용, ID 등을 포함)입니다
     // console.log(post.title)은 그중에서 title 속성(게시물 제목)만 콘솔에 출력합니다
+
+    .then(error=>console.error(error));
 
 
 

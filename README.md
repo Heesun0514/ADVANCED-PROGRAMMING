@@ -13,6 +13,10 @@
 | 4 | Events | [📘 README](javascript-notes/04-events/README.md) | [🇰🇷 README.kr.md](javascript-notes/04-events/README.kr.md) | ✅ Done |
 | 5 |  Asynchronous Programming | [📘 README](javascript-notes/05-asynchronous-programming/README.md) | [🇰🇷 README.kr.md](javascript-notes/05-asynchronous-programming/README.kr.md) | ✅ Done |
 | 6 | Network Programming | [📘 README](javascript-notes/06-network-programming/README.md) | [🇰🇷 README.kr.md](javascript-notes/06-network-programming/README.kr.md) | ✅ Done |
+| 7 | Promise | [📘 README](javascript-notes/07-Promise/README.md) | [🇰🇷 README.kr.md](javascript-notes/06-Promise |/README.kr.md) | ✅ Done |
+| 8 | Json | [📘 README](javascript-notes/08-Json/README.md) | [🇰🇷 README.kr.md](javascript-notes/08-Json/README.kr.md) | ✅ Done |
+
+
 
 
 

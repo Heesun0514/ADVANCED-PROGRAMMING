@@ -38,43 +38,25 @@ xhr.send();
 ```
 
 ### 4.  fetch() API (현대 방식 - 추천) why? 
->> 원격 API 호출하면 제일 먼저 떠오르는 것이 request나 axios, jQuery와 같은 라이브러리일 것입니다. 브라우저에서 fetch() 함수를 지원하기 이 전에는 클라이언트 단에서 직접 HTTP 요청하고 응답을 받는 게 상당히 복잡해서 이러한 라이브러리를 사용하는 것이 합리적이었습니다. 하지만 요즘에는 굳이 이러한 라이브러리의 도움없이도 **브라우저에서 내장된 fetch() 함수를 이용** 하면 대부분의 경우 충분하기 때문에 오히려 이러한 라이브러리를 사용하는 것이 자바스크립트 번들(bundle) 파일의 크기만 늘려서 낭비가 될 수 있습니다.
+> 브라우저에서 fetch() 함수를 지원하기 이 전에는 request나 axios, jQuery와 같은 라이브러리를 사용해서 클라이언트 단에서 직접 HTTP 요청하고 응답을 받는 게 상당히 복잡해서 이러한 라이브러리를 사용. 
 
-#### GET 요청
+요즘에는 **브라우저에서 내장된 fetch() 함수를 이용** 이러한 라이브러리를 사용하는 것이 자바스크립트 번들(bundle) 파일의 크기만 늘려서 낭비가 될 수 있습니다.
+
+#### fetch 사용법 
 
 ```javascript
-fetch('https://api.example.com/data')
-    .then(response => {
-        if (!response.ok) {
-            throw new Error('HTTP error ' + response.status);
-        }
-        return response.json();
-    })
-    .then(data => console.log(data))
-    .catch(error => console.error('Error:', error));
+fetch(url,options) 
+    //첫번째 인자로 URL, 두번째 인자로 옵션 객체를 받고, Promise 타입의 객체를 반환
+            // 옵션(options) 객체에는 HTTP 방식(method), HTTP 요청 헤더(headers), HTTP 요청 전문(body) 등을 설정
+            // 응답(response) 객체로 부터는 HTTP 응답 상태(status), HTTP 응답 헤더(headers), HTTP 응답 전문(body) 등을 읽어 옴 
+.then((response)=>console.log("response:",response)) // 성공
+.catch((error)=>console.log("error:",error)) // 실패 
 ```
 
 
-#### POST 요청
+<>
 
-``` javascript
-fetch('https://api.example.com/users', {
-    method: 'POST',
-    headers: {
-        'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({
-        name: 'Jane',
-        age: 30
-    })
-})
-.then(response => response.json())
-.then(data => console.log(data));
-```
-
-#### 
-
-- fetch는 기본적으로 HTTP *GET* 요청
+- fetch는 기본적으로 HTTP *GET* 요청,옵션 인자가 필요 없다 
 - 완전히 자유롭게 이름을 바꿀 수 있습니다
 
 ```javascript
@@ -107,6 +89,44 @@ fetch('https://jsonplaceholder.typicode.com/posts/1')
 .then(post => ...)           // 게시글일 때
 .then(user => ...)           // 사용자 정보일 때
 ```
+
+
+#### GET 요청
+
+```javascript
+fetch('https://api.example.com/data')
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('HTTP error ' + response.status);
+        }
+        return response.json();
+    })
+    .then(data => console.log(data))
+    .catch(error => console.error('Error:', error));
+```
+
+
+#### POST 요청
+
+``` javascript
+fetch('https://api.example.com/users', {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+        name: 'Jane',
+        age: 30
+    })
+    // method 옵션을 POST로 지정해주고, headers 옵션을 통해 JSON 포맷을 사용한다고 알려줘야 하며, 요청 전문을 JSON 포맷으로 직렬화화여 가장 중요한 body 옵션에 설정
+})
+.then(response => response.json())
+.then(data => console.log(data));
+```
+
+
+> fetch() 함수는 사용법이 아주 간단하지만, 계속 사용하다보면 똑같은 코드가 반복된다는 것 ! 그래서 ---> **async/await 방식**
+
 
 ### 🧵 5. async/await 방식 (더 간결)
 
